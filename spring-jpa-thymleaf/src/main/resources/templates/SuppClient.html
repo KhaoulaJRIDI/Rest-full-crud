@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Suppression d'un Client</title>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" 
+th:href="@{/css/bootstrap.min.css}"/>
+
+<link rel="stylesheet" type="text/css" href="../static/css/MyStyle.css" 
+th:href="@{/css/MyStyle.css}"/>
+</head>
+<body>
+
+<div class="col-md-6 col-sm-6  col-xs-12 spacer  col-md-offset-3" >
+    <div class="panel panel-default">
+       <div class="panel-heading"> Suppression d'un client </div>
+       <div class="panel-body">
+        
+           <form th:action="@{DeleteClient}" method="post" th:object="${client}" >
+             <div class="form-group">
+                <label class="control-label">ID:</label>
+                <input type="text" th:field="*{id}" class="form-control" />
+                 <span th:errors="*{id}" class="text-danger"></span>                   
+             </div>
+             
+             <div><button type="submit" class="btn btn-primary">Supprimer</button></div>
+             </form>
+             </div></div></div>
+
+
+
+
+</body>
+</html>
